@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-4596602693090710353
+--- !u!114 &-5415214821375932556
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BWMaterial
-  m_Shader: {fileID: -6465566751694194690, guid: aab98f061791ea04493ad3d85947d243, type: 3}
+  m_Name: BnWSpriteShader
+  m_Shader: {fileID: -6465566751694194690, guid: 91f755085b34f054b9b2e9f882e07d9d, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -33,16 +33,8 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _CameraSortingLayerTexture:
-        m_Texture: {fileID: 8400000, guid: 23762d500f85a1245a0025d91ab3459f, type: 2}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _World:
-        m_Texture: {fileID: 8400000, guid: 23762d500f85a1245a0025d91ab3459f, type: 2}
+        m_Texture: {fileID: 2800000, guid: 88f4763d44ac6b640827d1987e904323, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -59,8 +51,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _BlendColor: 0.2
+    - _Grey: 155
+    - _GreyIntensity: 0.8
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _XSizeRatio: 1.777778
     m_Colors: []
   m_BuildTextureStacks: []
