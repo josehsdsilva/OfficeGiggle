@@ -5,7 +5,7 @@ public class PlayerBehaviour : MonoBehaviour
     public float velocidade = 5f;
     public static bool apanhou = false;
 
-    void Update()
+    void FixedUpdate()
     {
         // Obtém as entradas do teclado
         float movimentoHorizontal = Input.GetAxis("Horizontal");
