@@ -4,7 +4,6 @@ public class SHOOT : MonoBehaviour
 {
     public GameObject projetilPrefab;
     public float velocidadeDisparo = 10f;
-    public static bool apanhou = false;
 
 
     void Update()
@@ -30,14 +29,16 @@ public class SHOOT : MonoBehaviour
 
     void Disparar(Vector3 direcaoDoMouse)
     {
+        if (!BarraOverheat.frozen)
+        {
+            // Instancia o projetil no ponto de disparo (cursor do mouse)
+            GameObject projetil = Instantiate(projetilPrefab, transform.position, Quaternion.identity);
 
-        // Instancia o projetil no ponto de disparo (cursor do mouse)
-        GameObject projetil = Instantiate(projetilPrefab, transform.position , Quaternion.identity);
+            // Calcula a direção do disparo
+            Vector3 direcaoDisparo = (direcaoDoMouse - transform.position).normalized;
 
-        // Calcula a direção do disparo
-        Vector3 direcaoDisparo = (direcaoDoMouse - transform.position).normalized;
-
-        // Aplica velocidade ao projetil
-        projetil.GetComponent<Rigidbody2D>().velocity = direcaoDisparo * velocidadeDisparo;
+            // Aplica velocidade ao projetil
+            projetil.GetComponent<Rigidbody2D>().velocity = direcaoDisparo * velocidadeDisparo;
+        }
     }
 }

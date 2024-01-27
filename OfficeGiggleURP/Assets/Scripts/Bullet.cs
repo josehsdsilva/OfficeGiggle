@@ -12,5 +12,12 @@ public class Bullet : MonoBehaviour
             // Destroi a bala ao colidir com o objeto "Wall"
             Destroy(gameObject);
         }
+
+        // Verifica se a bala colidiu com um objeto chamado "Enemy"
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            // Destroi a bala ao colidir com o objeto "Wall"
+            Destroy(gameObject);
+        }
     }
 }
