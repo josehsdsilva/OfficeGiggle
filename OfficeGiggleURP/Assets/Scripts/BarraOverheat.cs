@@ -4,37 +4,46 @@ using UnityEngine.UI;
 public class BarraOverheat : MonoBehaviour
 {
     public Slider barraSlider;
+    public GameObject Player;
     public float taxaDeEnchimento = 0.01f;
     public float taxaDeResfriamento = 0.02f;
-    public float limiteOverheat = 1.0f;
+    public float limiteOverheat = 100.0f;
 
-    private float nivelOverheat = 0.0f;
-    private bool congelado = false;
+    public static float nivelOverheat = 50.0f;
+    public static bool frozen = false;
 
     void Update()
     {
-        if (!congelado)
+        if (Weapon.apanhou)
         {
-            // Enche a barra de overheat quando o jogador clica
-            if (Input.GetMouseButtonDown(0))
+            if (!frozen)
             {
-                nivelOverheat += taxaDeEnchimento * Time.deltaTime;
-                nivelOverheat = Mathf.Clamp01(nivelOverheat); // Garante que o valor esteja entre 0 e 1
-            }
-            // Resfria a barra de overheat quando não está atirando
-            else
-            {
-                nivelOverheat -= taxaDeResfriamento * Time.deltaTime;
-                nivelOverheat = Mathf.Clamp01(nivelOverheat); // Garante que o valor esteja entre 0 e 1
-            }
+                // Enche a barra de overheat quando o jogador clica
+                if (Input.GetMouseButtonDown(0))
+                {
+                    nivelOverheat += taxaDeEnchimento * Time.deltaTime;
+                    nivelOverheat = Mathf.Clamp(nivelOverheat, 0f, limiteOverheat);
+                }
+                // Resfria a barra de overheat quando não está atirando
+                else
+                {
+                    nivelOverheat -= taxaDeResfriamento * Time.deltaTime;
+                    nivelOverheat = Mathf.Clamp(nivelOverheat, 0f, limiteOverheat);
+                }
 
-            // Atualiza a visualização da barra
-            AtualizarBarraOverheat();
+                // Atualiza a visualização da barra
+                AtualizarBarraOverheat();
 
-            // Verifica se atingiu o limite de overheat
-            if (nivelOverheat >= limiteOverheat)
-            {
-                CongelarJogador();
+                // Verifica se atingiu o limite de overheat
+                if (nivelOverheat >= limiteOverheat)
+                {
+                    CongelarJogador();
+                }
+                // Verifica se atingiu o limite de overheat
+                if (nivelOverheat <= 0)
+                {
+                    ToTristeMorri();
+                }
             }
         }
     }
@@ -47,8 +56,12 @@ public class BarraOverheat : MonoBehaviour
 
     void CongelarJogador()
     {
-        congelado = true;
+        frozen = true;
         Debug.Log("Jogador Congelado!");
         // Adicione aqui qualquer lógica adicional ao congelar o jogador
+    }
+    void ToTristeMorri()
+    {
+        Destroy(Player);
     }
 }

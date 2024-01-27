@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class BulletEnemy : MonoBehaviour
 {
+    public int damage = 500;
     void OnTriggerEnter2D(Collider2D other)
     {
         // Verifica se a bala colidiu com um objeto chamado "Wall"
@@ -14,10 +15,10 @@ public class Bullet : MonoBehaviour
         }
 
         // Verifica se a bala colidiu com um objeto chamado "Enemy"
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Player"))
         {
-            // Destroi a bala ao colidir com o objeto "Wall"
-            Destroy(gameObject);
+            BarraOverheat.nivelOverheat -= damage * Time.deltaTime;
+            BarraOverheat.nivelOverheat = Mathf.Clamp(BarraOverheat.nivelOverheat, 0f, 100);
         }
     }
 }
