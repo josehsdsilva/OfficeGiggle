@@ -8,13 +8,12 @@ public class GreyController : MonoBehaviour
 
     int animationStatus = 0;
     float animationElapsedTime, animationProgress, animationDuration;
-    float defaultAnimDuration = 2f;
-    [SerializeField] float currentLevel, targetLevel, difference;
+    float defaultAnimDuration = 1f;
+    float currentLevel, difference;
 
     private void Start()
     {
-        material.SetFloat("_GreyIntensity", 0);
-        SetTargetValue(0.1f);
+        material.SetFloat("_GreyIntensity", 0f);
     }
 
     void FixedUpdate()
@@ -30,7 +29,6 @@ public class GreyController : MonoBehaviour
                 if (animationStatus == 1)
                 {
                     animationStatus = 0;
-                    SetTargetValue(0.8f);
                 }
             }
             else if (animationStatus == 1)
@@ -40,10 +38,10 @@ public class GreyController : MonoBehaviour
         }
     }
 
-    void SetTargetValue(float _targetValue)
+    public void SetTargetValue(float _targetValue)
     {
+        _targetValue *= .8f;
         currentLevel = material.GetFloat("_GreyIntensity");
-        targetLevel = _targetValue;
         difference =  _targetValue - currentLevel;
         animationElapsedTime = 0;
         animationProgress = 0;

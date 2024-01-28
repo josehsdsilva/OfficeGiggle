@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Entrance.unity
     guid: e5a8048630de81a4394f302b0cdf6f58
+  - enabled: 1
+    path: Assets/Scenes/FirstFloor.unity
+    guid: 66b08ac94ce7dfd44bae2819e4ba8234
+  - enabled: 1
+    path: Assets/Scenes/CEO.unity
+    guid: dac1b31fc6b42e44fbb6b4d7a48e1636
   m_configObjects: {}

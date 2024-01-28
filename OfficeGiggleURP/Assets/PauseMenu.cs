@@ -42,11 +42,11 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMenu()
     {
-        Debug.Log("loading menu...")
+        Debug.Log("loading menu...");
     }
 
     public void QuitGame()
     {
-        Debug.Log("quitting menu...")
+        Debug.Log("quitting menu...");
     }
 }
