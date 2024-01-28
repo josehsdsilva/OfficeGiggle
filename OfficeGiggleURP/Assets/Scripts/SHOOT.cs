@@ -13,7 +13,7 @@ public class SHOOT : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         ApontarEAtirar();
     }
@@ -31,10 +31,10 @@ public class SHOOT : MonoBehaviour
             // Disparo ao pressionar o botão esquerdo do mouse
             if (Input.GetMouseButtonDown(0))
             {
+                Disparar(mousePosition);
                 shooting = true;
                 cooldown = 1f;
                 animator.SetBool("shooting", true);
-                Disparar(mousePosition);
             }
             else if (shooting && cooldown < 0)
             {
