@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f22d3464a6e980848a5ce2712ecb5407
+guid: 3ed9637b111d22b42b8849232aac9d48
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,7 +105,70 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MC_shooting_0
+      name: MC_movement_Sad_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edd2ca67d487d9044b9dde01aae3cfb2
+      internalID: -1629021611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_movement_Sad_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99d54eb3bc8181141b0e98cc9b96d2fe
+      internalID: 1385898722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_movement_Sad_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a26ef07f68485c469a2293f022e506e
+      internalID: 228930677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_movement_Sad_3
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ad2d78f763d17b42b311c7508411285
-      internalID: -1978493114
+      spriteID: aee30dcb1c661e744ad66a302071c9e0
+      internalID: -2023951867
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_shooting_1
+      name: MC_movement_Sad_4
       rect:
         serializedVersion: 2
         x: 64
@@ -140,14 +203,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2efdb91c4d935214f88263b721867cc6
-      internalID: 1072278295
+      spriteID: 24b9bdd6cf34d5644b36e21c558ef397
+      internalID: 1852827207
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_shooting_2
+      name: MC_movement_Sad_5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa97821fe18f9e14bbd9f8685e94ef6d
+      internalID: -535896545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_movement_Sad_6
       rect:
         serializedVersion: 2
         x: 0
@@ -161,14 +245,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 501a785919cb72d4f9e19c47c273958c
-      internalID: 494909679
+      spriteID: d7d88b37d1459dc4fa87475fb473fd19
+      internalID: 659448148
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_shooting_3
+      name: MC_movement_Sad_7
       rect:
         serializedVersion: 2
         x: 64
@@ -182,14 +266,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f675271cb1dad394ea00a1223af6ce3d
-      internalID: -1625280163
+      spriteID: 02e9f3ef86fa57d418ae2ff9f38f5980
+      internalID: -379076054
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_shooting_4
+      name: MC_movement_Sad_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f070d13bc9fb12a41a45fdb38185f6e1
+      internalID: -1642260782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_movement_Sad_9
       rect:
         serializedVersion: 2
         x: 0
@@ -203,14 +308,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 291072b3164990b409fef12e8ef216ad
-      internalID: 1229325947
+      spriteID: 6f59fc5b8c32a2d4b83bd202f5547ef1
+      internalID: -1289097746
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_shooting_5
+      name: MC_movement_Sad_10
       rect:
         serializedVersion: 2
         x: 64
@@ -224,8 +329,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37cf922820599744ba9a9a97c9aed1e0
-      internalID: -1459865938
+      spriteID: 6c95d622a2cd4a444b226445c56fc4f4
+      internalID: 450371516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_movement_Sad_11
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 793bafb76eb552245bdbdc0b76e716ab
+      internalID: 1052092107
       vertices: []
       indices: 
       edges: []
@@ -241,12 +367,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      MC_shooting_0: -1978493114
-      MC_shooting_1: 1072278295
-      MC_shooting_2: 494909679
-      MC_shooting_3: -1625280163
-      MC_shooting_4: 1229325947
-      MC_shooting_5: -1459865938
+      MC_movement_Sad_0: -1629021611
+      MC_movement_Sad_1: 1385898722
+      MC_movement_Sad_10: 450371516
+      MC_movement_Sad_11: 1052092107
+      MC_movement_Sad_2: 228930677
+      MC_movement_Sad_3: -2023951867
+      MC_movement_Sad_4: 1852827207
+      MC_movement_Sad_5: -535896545
+      MC_movement_Sad_6: 659448148
+      MC_movement_Sad_7: -379076054
+      MC_movement_Sad_8: -1642260782
+      MC_movement_Sad_9: -1289097746
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
