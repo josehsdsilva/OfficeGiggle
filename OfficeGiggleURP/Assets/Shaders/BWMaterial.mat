@@ -37,6 +37,10 @@ Material:
         m_Texture: {fileID: 8400000, guid: 23762d500f85a1245a0025d91ab3459f, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _World:
         m_Texture: {fileID: 8400000, guid: 23762d500f85a1245a0025d91ab3459f, type: 2}
         m_Scale: {x: 1, y: 1}
@@ -57,5 +61,6 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _XSizeRatio: 1.777778
     m_Colors: []
   m_BuildTextureStacks: []
