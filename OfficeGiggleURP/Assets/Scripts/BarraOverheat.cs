@@ -21,7 +21,7 @@ public class BarraOverheat : MonoBehaviour
                 // Enche a barra de overheat quando o jogador clica
                 if (Input.GetMouseButtonDown(0))
                 {
-                    nivelOverheat += taxaDeEnchimento * Time.deltaTime;
+                    nivelOverheat += taxaDeEnchimento;
                     nivelOverheat = Mathf.Clamp(nivelOverheat, 0f, limiteOverheat);
                 }
                 // Resfria a barra de overheat quando não está atirando

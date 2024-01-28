@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] Transform target;
-    public static int EnemyHealth = 5;
+    private int EnemyHealth = 5;
 
     NavMeshAgent agent;
 
@@ -29,9 +29,10 @@ public class Enemy : MonoBehaviour
         // Verifica se a bala colidiu com um objeto chamado "Bullet"
         if (other.gameObject.CompareTag("Bullet"))
         {
-            Enemy.EnemyHealth -= 1;
-            if (Enemy.EnemyHealth == 0)
+            EnemyHealth -= 1;
+            if (EnemyHealth <= 0)
             {
+                //EnemyHealth = 5;
                 // Destroi a bala ao colidir com o objeto "Wall"
                 Destroy(gameObject);
             }
