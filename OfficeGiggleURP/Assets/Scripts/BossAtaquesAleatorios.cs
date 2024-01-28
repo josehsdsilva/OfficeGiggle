@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossAtaquesAleatorios : MonoBehaviour
 {
@@ -7,12 +8,16 @@ public class BossAtaquesAleatorios : MonoBehaviour
     public float intervaloEntreAtaques = 5f;
     public float tempoDeVidaEspada = 3f;
     public float forcaLancamento = 10f; // Ajuste conforme necessário
+    //public Sprite novaSprite;
+    //private Image imagemDoObjeto;
 
     private float tempoUltimoAtaque = 0f;
     private Transform jogador;
 
     void Start()
     {
+        //imagemDoObjeto = GetComponent<Image>();
+
         jogador = GameObject.FindGameObjectWithTag("Player").transform;
 
         // Remove a espada original (caso exista)
@@ -27,7 +32,6 @@ public class BossAtaquesAleatorios : MonoBehaviour
     {
         // Move o boss em direção ao jogador
         transform.position = Vector3.MoveTowards(transform.position, jogador.position, velocidadeMovimento * Time.deltaTime);
-
         // Verifica se tempo suficiente passou desde o último ataque
         if (Time.time - tempoUltimoAtaque > intervaloEntreAtaques)
         {
@@ -39,6 +43,7 @@ public class BossAtaquesAleatorios : MonoBehaviour
 
     void ExecutarAtaque()
     {
+        //MudarSprite();
         // Instancia a espada no local do chefe
         GameObject espada = Instantiate(espadaPrefab, transform.position, Quaternion.identity);
 
@@ -57,4 +62,10 @@ public class BossAtaquesAleatorios : MonoBehaviour
             espadaFlutuante.Inicializar(jogador.position, tempoDeVidaEspada);
         }
     }
+    // Função para mudar a sprite de uma imagem
+    /*void MudarSprite()
+    {
+        // Atribui a nova sprite à imagem
+        imagemDoObjeto.sprite = novaSprite;
+    }*/
 }
