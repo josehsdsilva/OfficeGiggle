@@ -29,7 +29,7 @@ public class FloorController : MonoBehaviour
 
         foreach (Transform en in enemiesParent)
         {
-            if (en.GetComponent<Enemy>().happy) happyCount++;
+            if (en.GetComponent<Enemy>() && en.GetComponent<Enemy>().happy) happyCount++;
         }
 
         levelFinished = happyCount >= enemyCount;

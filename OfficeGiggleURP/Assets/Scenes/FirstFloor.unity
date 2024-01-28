@@ -500,6 +500,10 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 1574047487}
+    - target: {fileID: 4106924310192314571, guid: 61792bf9a23d13048909dcd9fcf97f19, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1574047487}
     - target: {fileID: 4106924310192314572, guid: 61792bf9a23d13048909dcd9fcf97f19, type: 3}
       propertyPath: m_Name
       value: OverHeatManager
