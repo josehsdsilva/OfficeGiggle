@@ -3442,7 +3442,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 8
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3599,8 +3599,8 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileSpriteArray:
-  - m_RefCount: 1
-    m_Data: {fileID: 1520220941, guid: 1815540223c3bc542a95baa9f95e39f0, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: -2061632597, guid: 1815540223c3bc542a95baa9f95e39f0, type: 3}
   - m_RefCount: 2
@@ -3615,8 +3615,8 @@ Tilemap:
     m_Data: {fileID: -326298932, guid: 1815540223c3bc542a95baa9f95e39f0, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: -1381993327, guid: 1815540223c3bc542a95baa9f95e39f0, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 1520220941, guid: 1815540223c3bc542a95baa9f95e39f0, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 14
     m_Data:
@@ -3689,6 +3689,8 @@ GameObject:
   - component: {fileID: 1639600695}
   - component: {fileID: 1639600694}
   - component: {fileID: 1639600693}
+  - component: {fileID: 1639600697}
+  - component: {fileID: 1639600696}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3762,6 +3764,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1639600696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639600692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d7432e369596954c84e257d25d689c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 353359206}
+  followSpeed: 2
+--- !u!114 &1639600697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639600692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!4 &1709110751 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5492510563447586220, guid: 597a9bbcc59adba42b45e1b5704c0c44, type: 3}
