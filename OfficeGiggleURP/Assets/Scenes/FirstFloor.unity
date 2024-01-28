@@ -1744,6 +1744,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5999900027743113295, guid: dae1ca11e678a6744899613f13c9c097, type: 3}
+      propertyPath: floorController
+      value: 
+      objectReference: {fileID: 1925768518}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dae1ca11e678a6744899613f13c9c097, type: 3}
 --- !u!1 &1613971888
@@ -4357,6 +4361,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2446003329220284620, guid: 112c6590088e81541afaf6b8084e0bcb, type: 3}
   m_PrefabInstance: {fileID: 532694690}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1925768518 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4067543938683230320, guid: f3d9cc027051e6d46aba427bd409b148, type: 3}
+  m_PrefabInstance: {fileID: 4067543937557351035}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dc858920c27a3f478346a57ab332d9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2025061551
 GameObject:
   m_ObjectHideFlags: 0

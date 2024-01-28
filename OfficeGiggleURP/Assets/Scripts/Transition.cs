@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class Transition : MonoBehaviour
 {
+    [SerializeField] FloorController floorController;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && floorController.levelFinished)
         {
             TransicaoParaProximaScena();
         }
