@@ -6,6 +6,7 @@ public class BossAtaquesAleatorios : MonoBehaviour
     public float velocidadeMovimento = 1f;
     public float intervaloEntreAtaques = 5f;
     public float tempoDeVidaEspada = 3f;
+    public float forcaLancamento = 10f; // Ajuste conforme necessário
 
     private float tempoUltimoAtaque = 0f;
     private Transform jogador;
@@ -40,6 +41,14 @@ public class BossAtaquesAleatorios : MonoBehaviour
     {
         // Instancia a espada no local do chefe
         GameObject espada = Instantiate(espadaPrefab, transform.position, Quaternion.identity);
+
+        // Adiciona força ao Rigidbody da espada
+        Rigidbody2D rbEspada = espada.GetComponent<Rigidbody2D>();
+        if (rbEspada != null)
+        {
+            Vector2 direcaoLancamento = (jogador.position - transform.position).normalized;
+            rbEspada.AddForce(direcaoLancamento * forcaLancamento, ForceMode2D.Impulse);
+        }
 
         // Configura a espada para flutuar continuamente em direção ao jogador
         Documentos espadaFlutuante = espada.GetComponent<Documentos>();

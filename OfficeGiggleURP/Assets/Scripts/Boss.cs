@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
-    public int BossHealth = 10;
+    public int BossHealth = 100;
     void OnTriggerEnter2D(Collider2D other)
     {
         // Verifica se a bala colidiu com um objeto chamado "Bullet"
