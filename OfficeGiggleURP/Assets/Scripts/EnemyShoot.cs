@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class EnemyShoot : MonoBehaviour
@@ -11,10 +12,21 @@ public class EnemyShoot : MonoBehaviour
 
     Enemy enemy;
 
+    bool shooting = false;
+
     void Start()
     {
         jogador = GameObject.FindGameObjectWithTag("Player").transform;
         enemy = GetComponent<Enemy>();
+
+        StartCoroutine("StartShooting");
+    }
+
+    IEnumerator StartShooting()
+    {
+        yield return new WaitForSeconds(2f);
+
+        shooting = true;
     }
 
     void Update()
@@ -29,6 +41,8 @@ public class EnemyShoot : MonoBehaviour
     bool PodeAtirar()
     {
         if (enemy.happy) return false;
+
+        if (!shooting) return false;
 
         // Verifica se tempo suficiente passou desde o último disparo
         tempoDesdeUltimoDisparo += Time.deltaTime;
