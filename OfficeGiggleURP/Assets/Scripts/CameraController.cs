@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     [SerializeField] Transform target;
-    [SerializeField] float followSpeed;
+    float followSpeed = 2f;
     Vector3 newPosition;
 
     // Update is called once per frame
