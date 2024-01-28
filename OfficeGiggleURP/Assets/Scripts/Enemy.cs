@@ -9,7 +9,9 @@ public class Enemy : MonoBehaviour
     private int EnemyHealth = 5;
 
     NavMeshAgent agent;
-    public bool happy = false;
+    public bool happy = false, moving = false;
+    Animator animator;
+
 
     // Start is called before the first frame update
     void Start()
@@ -17,12 +19,26 @@ public class Enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        animator = GetComponent<Animator>();
+
+        StartCoroutine("StartChasing");
+    }
+
+    IEnumerator StartChasing()
+    {
+        yield return new WaitForSeconds(2f);
+
+        moving = true;
+
+        animator.SetBool("moving", true);
     }
 
     // Update is called once per frame
     void Update()
     {
         if (happy) return;
+
+        if (!moving) return;
 
         agent.SetDestination(target.position);
     }
@@ -39,6 +55,7 @@ public class Enemy : MonoBehaviour
                 // Destroi a bala ao colidir com o objeto "Wall"
                 agent.isStopped = true;
                 happy = true;
+                animator.SetBool("happy", true);
             }
         }
     }

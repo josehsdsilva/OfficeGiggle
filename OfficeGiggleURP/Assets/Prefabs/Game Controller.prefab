@@ -46,9 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 64fb359b1cdd82b4c930dd5fa2ad2f35, type: 2}
-  currentLevel: 0
-  targetLevel: 0
-  difference: 0
 --- !u!114 &4067543938683230320
 MonoBehaviour:
   m_ObjectHideFlags: 0

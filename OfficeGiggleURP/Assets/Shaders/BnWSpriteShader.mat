@@ -53,7 +53,7 @@ Material:
     m_Floats:
     - _BlendColor: 0.2
     - _Grey: 155
-    - _GreyIntensity: 0.7999985
+    - _GreyIntensity: 0.27304205
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors: []

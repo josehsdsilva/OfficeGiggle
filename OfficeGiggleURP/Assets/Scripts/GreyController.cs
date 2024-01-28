@@ -9,7 +9,7 @@ public class GreyController : MonoBehaviour
     int animationStatus = 0;
     float animationElapsedTime, animationProgress, animationDuration;
     float defaultAnimDuration = 1f;
-    [SerializeField] float currentLevel, targetLevel, difference;
+    float currentLevel, difference;
 
     private void Start()
     {
@@ -42,7 +42,6 @@ public class GreyController : MonoBehaviour
     {
         _targetValue *= .8f;
         currentLevel = material.GetFloat("_GreyIntensity");
-        targetLevel = _targetValue;
         difference =  _targetValue - currentLevel;
         animationElapsedTime = 0;
         animationProgress = 0;
