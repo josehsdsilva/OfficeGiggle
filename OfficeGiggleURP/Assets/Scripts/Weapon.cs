@@ -6,6 +6,11 @@ public class Weapon : MonoBehaviour
 {
     public static bool apanhou = false;
 
+    private void Start()
+    {
+        apanhou = false;
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         // Verifica se a bala colidiu com um objeto chamado "Player"
