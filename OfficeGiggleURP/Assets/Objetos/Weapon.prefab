@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 2167869019069908165}
   - component: {fileID: 577631111377010897}
   - component: {fileID: 8483646964264575914}
+  - component: {fileID: 2743924371790290690}
   m_Layer: 0
   m_Name: Weapon
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,3 +112,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2743924371790290690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6186150396736308856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c5a54ccdb8ba3b40820c2b07ff0dad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

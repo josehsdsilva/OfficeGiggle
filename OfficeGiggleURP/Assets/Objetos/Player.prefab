@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1917764924}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,7 +109,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &2446003329220284623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidade: 5
+  sad: 0
 --- !u!114 &2446003329220284616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 113d31bd01ea2dd4f83170dbf30f86b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projetilPrefab: {fileID: 0}
+  projetilPrefab: {fileID: 8790602941675249154, guid: c32e1e2c432abd94d87e3b5ca83ad057, type: 3}
   velocidadeDisparo: 10
 --- !u!61 &-7045145385736266300
 BoxCollider2D:

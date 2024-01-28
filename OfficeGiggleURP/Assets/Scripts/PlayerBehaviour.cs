@@ -7,6 +7,7 @@ public class PlayerBehaviour : MonoBehaviour
     Animator animator;
     bool isFacingLeft = false, moving = false;
     Vector2 facingRight;
+    public bool sad = false;
 
     private void Start()
     {
@@ -19,11 +20,15 @@ public class PlayerBehaviour : MonoBehaviour
         // Obtém as entradas do teclado
         float movimentoHorizontal = Input.GetAxis("Horizontal");
         float movimentoVertical = Input.GetAxis("Vertical");
-        isFacingLeft = movimentoHorizontal < 0;
-        moving = movimentoVertical > 0.01f || movimentoVertical < -0.01f || movimentoHorizontal > 0.01f || movimentoHorizontal < -0.01f;
         animator.SetFloat("moveX", movimentoHorizontal);
         animator.SetFloat("moveY", movimentoVertical);
+
+        isFacingLeft = movimentoHorizontal < 0;
+
+        moving = movimentoVertical > 0.01f || movimentoVertical < -0.01f || movimentoHorizontal > 0.01f || movimentoHorizontal < -0.01f;
         animator.SetBool("moving", moving);
+
+        animator.SetBool("sad", sad);
 
         if (isFacingLeft)
         {

@@ -4,17 +4,26 @@ public class SHOOT : MonoBehaviour
 {
     public GameObject projetilPrefab;
     public float velocidadeDisparo = 10f;
+    Animator animator;
+    float cooldown = 0.5f;
+    bool shooting;
 
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
-    void Update()
+    void FixedUpdate()
     {
         ApontarEAtirar();
     }
 
     void ApontarEAtirar()
     {
-        if (Weapon.apanhou == true)
+        if (Weapon.apanhou)
         {
+            if (shooting) cooldown -= Time.deltaTime;
+
             // Obtém a posição do mouse em relação ao mundo
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = 0f;
@@ -22,7 +31,15 @@ public class SHOOT : MonoBehaviour
             // Disparo ao pressionar o botão esquerdo do mouse
             if (Input.GetMouseButtonDown(0))
             {
+                shooting = true;
+                cooldown = 1f;
+                animator.SetBool("shooting", true);
                 Disparar(mousePosition);
+            }
+            else if (shooting && cooldown < 0)
+            {
+                shooting = false;
+                animator.SetBool("shooting", false);
             }
         }
     }
