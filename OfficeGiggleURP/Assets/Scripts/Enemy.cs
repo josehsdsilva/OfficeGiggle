@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     private int EnemyHealth = 5;
 
     NavMeshAgent agent;
+    public bool happy = false;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,8 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (happy) return;
+
         agent.SetDestination(target.position);
     }
 
@@ -34,7 +37,8 @@ public class Enemy : MonoBehaviour
             {
                 //EnemyHealth = 5;
                 // Destroi a bala ao colidir com o objeto "Wall"
-                Destroy(gameObject);
+                agent.isStopped = true;
+                happy = true;
             }
         }
     }

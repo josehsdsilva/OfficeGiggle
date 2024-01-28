@@ -9,9 +9,12 @@ public class EnemyShoot : MonoBehaviour
     private Transform jogador;
     private float tempoDesdeUltimoDisparo = 0f;
 
+    Enemy enemy;
+
     void Start()
     {
         jogador = GameObject.FindGameObjectWithTag("Player").transform;
+        enemy = GetComponent<Enemy>();
     }
 
     void Update()
@@ -25,6 +28,8 @@ public class EnemyShoot : MonoBehaviour
 
     bool PodeAtirar()
     {
+        if (enemy.happy) return false;
+
         // Verifica se tempo suficiente passou desde o último disparo
         tempoDesdeUltimoDisparo += Time.deltaTime;
         if (tempoDesdeUltimoDisparo >= taxaDeDisparo)
