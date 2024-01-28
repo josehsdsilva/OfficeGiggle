@@ -8,6 +8,9 @@ public class PlayerBehaviour : MonoBehaviour
     bool isFacingLeft = false, moving = false;
     Vector2 facingRight;
     public bool sad = false;
+   
+
+
 
     private void Start()
     {
@@ -43,5 +46,6 @@ public class PlayerBehaviour : MonoBehaviour
 
         // Move o jogador na direção calculada
         transform.Translate(direcao * velocidade * Time.deltaTime);
+
     }
 }

@@ -10,6 +10,8 @@ public class BarraOverheat : MonoBehaviour
     public float taxaDeEnchimento = 0.01f;
     public float taxaDeResfriamento = 0.02f;
     public float limiteOverheat = 100.0f;
+    public AudioSource ficarfeliz;
+    
 
     public static float nivelOverheat = 50.0f;
     public static bool frozen = false;
@@ -34,8 +36,55 @@ public class BarraOverheat : MonoBehaviour
         {
             nivelOverheat += taxaDeEnchimento;
             nivelOverheat = Mathf.Clamp(nivelOverheat, 0f, limiteOverheat);
+            if (!frozen)
+            {
+                // Enche a barra de overheat quando o jogador clica
+                if (Input.GetMouseButtonDown(0))
+                {
+                    nivelOverheat += taxaDeEnchimento;
+                    nivelOverheat = Mathf.Clamp(nivelOverheat, 0f, limiteOverheat);
+
+                }
+                // Resfria a barra de overheat quando nï¿½o estï¿½ atirando
+                else
+                {
+                    nivelOverheat -= taxaDeResfriamento * Time.deltaTime;
+                    nivelOverheat = Mathf.Clamp(nivelOverheat, 0f, limiteOverheat);
+                }
+
+                // Atualiza a visualizaï¿½ï¿½o da barra
+                AtualizarBarraOverheat();
+
+                if (nivelOverheat >= 50.0)
+                {
+                    if (!ficarfeliz.isPlaying)
+                    {
+                        ficarfeliz.Play();
+                    }
+
+                }
+                else
+                {
+                    if (ficarfeliz.isPlaying)
+                    {
+                        ficarfeliz.Stop();
+                    }
+
+                }
+
+                // Verifica se atingiu o limite de overheat
+                if (nivelOverheat >= limiteOverheat)
+                {
+                    CongelarJogador();
+                }
+                // Verifica se atingiu o limite de overheat
+                if (nivelOverheat <= 0)
+                {
+                    ToTristeMorri();
+                }
+            }
         }
-        // Resfria a barra de overheat quando não está atirando
+        // Resfria a barra de overheat quando nï¿½o estï¿½ atirando
         else
         {
             nivelOverheat -= taxaDeResfriamento * Time.deltaTime;
@@ -44,7 +93,7 @@ public class BarraOverheat : MonoBehaviour
 
         animator.SetBool("sad", nivelOverheat < 50f);
 
-        // Atualiza a visualização da barra
+        // Atualiza a visualizaï¿½ï¿½o da barra
         AtualizarBarraOverheat();
 
         // Verifica se atingiu o limite de overheat
@@ -59,7 +108,8 @@ public class BarraOverheat : MonoBehaviour
         } 
     }
 
-    void AtualizarBarraOverheat()
+
+void AtualizarBarraOverheat()
     {
         // Atualiza o valor da barra de overheat usando o Slider
         barraSlider.value = nivelOverheat;
@@ -67,7 +117,7 @@ public class BarraOverheat : MonoBehaviour
 
     void CongelarJogador()
     {
-        // Adicione aqui qualquer lógica adicional ao congelar o jogador
+        // Adicione aqui qualquer lï¿½gica adicional ao congelar o jogador
         StartCoroutine("FreezePlayer");
     }
 
@@ -95,5 +145,10 @@ public class BarraOverheat : MonoBehaviour
         yield return new WaitForSeconds(3);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public float ReturnOverHeat()
+    {
+        return nivelOverheat;
     }
 }
